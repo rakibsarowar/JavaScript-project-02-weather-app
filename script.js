@@ -17,17 +17,12 @@ function displayWeatherInfo(data) {
     const humidity = data.main.humidity;
     const icon = data.weather[0].icon;
 
-    // 
-
-    //
-
     const weatherIconHTML = `<i class="fas ${getWeatherIcon(icon)}" id="weatherIcon"></i>`;
     const temperatureHTML = `<p>Temperature: <span id="temperatureValue">${temperature}</span> °C</p>`;
     const descriptionHTML = `<p>Description: ${description}</p>`;
     const humidityHTML = `<p>Humidity: ${humidity}%</p>`;
 
     const weatherInfo = document.getElementById('weatherInfo');
-    // weatherInfo.innerHTML = weatherIconHTML + temperatureHTML + descriptionHTML + humidityHTML;
 
     const weatherInfoHTML = `
     <div class="weather-content">
@@ -43,7 +38,6 @@ function displayWeatherInfo(data) {
 }
 
 function getWeatherIcon(icon) {
-    // Map weather icons from OpenWeatherMap to Font Awesome icons
     const iconMap = {
         '01d': 'fa-sun',
         '01n': 'fa-moon',
@@ -65,7 +59,7 @@ function getWeatherIcon(icon) {
         '50n': 'fa-smog'
     };
 
-    return iconMap[icon] || 'fa-question'; // Return 'fa-question' if the icon is not found in the map
+    return iconMap[icon] || 'fa-question'; 
 }
 
 function updateBackgroundImage(icon) {
@@ -84,7 +78,6 @@ function updateBackgroundImage(icon) {
 }
 
 function getBackgroundImageUrl(icon) {
-    // Map weather icons to background image URLs
     const backgroundImageMap = {
         '01d': 'url(path/to/clear-sky-image.jpg)',
         '01n': 'url(path/to/clear-night-image.jpg)',
@@ -106,7 +99,7 @@ function getBackgroundImageUrl(icon) {
         '50n': 'url(path/to/mist-image.jpg)'
     };
 
-    return backgroundImageMap[icon] || null; // Return null if the icon is not found in the map
+    return backgroundImageMap[icon] || null;
 }
 
 const locationInput = document.getElementById('locationInput');
